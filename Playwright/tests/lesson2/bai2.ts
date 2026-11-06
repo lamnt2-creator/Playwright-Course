@@ -60,13 +60,9 @@ let statusSuccess = multitransactions.filter(transaction => transaction.status =
 
 console.log(statusSuccess);
 
-let currencyVND = statusSuccess.filter(transaction => transaction.currency === 'VND');
+let currencyVND = statusSuccess.filter(transaction => transaction.currency === 'VND').map(transaction => transaction.transactionID);;
 
 console.log(currencyVND);
-
-let vndtransactionIDs = currencyVND.map(transaction => transaction.transactionID);
-
-console.log(vndtransactionIDs);
 
 let failedTransaction = multitransactions.filter(transaction => transaction.status === 'FAILED');
 
